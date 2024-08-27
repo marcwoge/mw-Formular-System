@@ -6,27 +6,27 @@ Die `FormularSystem`-Erweiterung ermöglicht das Einbetten von Formularen aus de
 ## Installation
 
 1. Lade die Erweiterung in dein `extensions`-Verzeichnis von MediaWiki:
+```
 git clone https://github.com/deinbenutzername/mw-Formular-System.git
-
+```
 2. Füge die Erweiterung in deiner `LocalSettings.php` hinzu:
 ```php
 wfLoadExtension('FormularSystem');
 $wgFormularSystemURL = "https://www.deinserver.de/Formular-System"; 
+```
 
 Verwendung
 Um ein Formular einzubetten, füge den folgenden Code in eine MediaWiki-Seite ein:
 
-<formular-system form="Besucherunterweisung"></formular-system>
+```
+<formular-system form="Formularname"></formular-system>
+```
 
 
+### 4. LICENSE
+Die Software unterliegt der MIT Lizenz
 
-### 4. `LICENSE`
-Eine Lizenzdatei, die die rechtlichen Bedingungen für die Nutzung und Verteilung deiner Erweiterung festlegt. GPL-2.0-or-later ist eine übliche Wahl.
 
-**Inhalt von LICENSE:**
-
-txt
-This extension is licensed under the MIT.
 
 
 
