@@ -37,12 +37,14 @@ Die Software unterliegt der MIT Lizenz
 
  # LocalSettings.php
 
-In der LocalSettings.php folgenden Parameter einfügen: 
+In der `LocalSettings.php` folgenden Parameter einfügen: 
 
+```
 $wgFormularSystemURL = "https://www.deinserver.de/Formular-System"; 
 wfLoadExtension('Formular-System');
+```
 
 # Verwendung
+```
 <formular-portal>Formularname</formular-portal>
-
-
+```
