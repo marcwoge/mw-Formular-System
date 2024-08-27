@@ -1,0 +1,25 @@
+{
+    "name": "FormularSystem",
+    "version": "1.0.0",
+    "author": [
+        "Marc-Philipp Woge"
+    ],
+    "description": "Ermöglicht das Einbetten von Formularen aus dem Formular-System",
+    "url": "https://https://github.com/marcwoge/mw-Formular-System",
+    "license-name": "MIT",
+    "type": "parserhook",
+    "Hooks": {
+        "ParserFirstCallInit": "FormularSystemHooks::onParserFirstCallInit"
+    },
+    "manifest_version": 1,
+    "AutoloadClasses": {
+        "FormularSystemHooks": "includes/FormularSystemHooks.php"
+    },
+    "Config": {
+        "wgFormularSystemURL": {
+            "value": "",
+            "description": "Base URL of the Formular-System application",
+            "type": "string"
+        }
+    }
+}
