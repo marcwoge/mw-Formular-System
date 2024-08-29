@@ -1,11 +1,11 @@
 {
-    "name": "FormularSystem",
+    "name": "mwFormularSystem",
     "version": "1.0.0",
     "author": [
         "Marc-Philipp Woge"
     ],
-    "description": "Ermöglicht das Einbetten von Formularen aus dem Formular-System",
-    "url": "https://https://github.com/marcwoge/mw-Formular-System",
+    "description": "Makes forms from Formular-System embedable into mediawiki",
+    "url": "https://github.com/marcwoge/mwFormularSystem",
     "license-name": "MIT",
     "type": "parserhook",
     "Hooks": {
@@ -20,6 +20,12 @@
             "value": "",
             "description": "Base URL of the Formular-System application",
             "type": "string"
+        },
+        "wgFormularSystemIgnoreSSLCertificate": {
+            "value": false,
+            "description": "Whether to ignore SSL certificate errors",
+            "type": "boolean"
         }
     }
 }
+

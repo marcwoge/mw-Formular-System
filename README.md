@@ -13,6 +13,8 @@ git clone https://github.com/deinbenutzername/mw-Formular-System.git
 ```php
 wfLoadExtension('FormularSystem');
 $wgFormularSystemURL = "https://www.deinserver.de/Formular-System"; 
+$wgFormularSystemIgnoreSSLCertificate = true; // Setze dies auf true, um SSL-Zertifikatsfehler zu ignorieren
+ 
 ```
 
 Verwendung
