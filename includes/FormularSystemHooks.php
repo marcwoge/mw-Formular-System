@@ -6,7 +6,7 @@ class FormularSystemHooks {
     }
 
     public static function renderFormularSystemEmbed($input, array $args, Parser $parser, PPFrame $frame) {
-        global $wgFormularSystemURL, $wgFormularSystemIgnoreSSLCertificate;
+        global $wgFormularSystemURL;
 
         if (!$wgFormularSystemURL) {
             return "Error: The FormularSystemURL is not set in LocalSettings.php.";
@@ -19,26 +19,11 @@ class FormularSystemHooks {
         $form = htmlspecialchars($args['form']);
         $iframeURL = htmlspecialchars($wgFormularSystemURL) . "/index.php?page=" . urlencode($form) . ".php&nav=wiki";
 
-        // cURL verwenden, um den Inhalt zu laden
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $iframeURL);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $iframe = "<iframe id=\"formularIframe\" src=\"$iframeURL\" width=\"100%\" height=\"600px\" frameborder=\"0\" allowfullscreen></iframe>";
 
-        // SSL-Zertifikatprüfung deaktivieren, falls eingestellt
-        if ($wgFormularSystemIgnoreSSLCertificate) {
-            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-        }
+        // Lade das Skript über die MediaWiki ResourceLoader API
+        $parser->getOutput()->addModules('ext.mwFormularSystem');
 
-        $response = curl_exec($ch);
-
-        if (curl_errno($ch)) {
-            return "Error loading form: " . curl_error($ch);
-        }
-
-        curl_close($ch);
-
-        // Rendere das iFrame mit dem geladenen Inhalt
-        return "<iframe src=\"$iframeURL\" width=\"100%\" height=\"600px\" frameborder=\"0\" allowfullscreen></iframe>";
+        return $iframe;
     }
 }

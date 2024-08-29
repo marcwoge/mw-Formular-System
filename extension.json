@@ -11,9 +11,27 @@
     "Hooks": {
         "ParserFirstCallInit": "FormularSystemHooks::onParserFirstCallInit"
     },
-    "manifest_version": 1,
+    "manifest_version": 2,
     "AutoloadClasses": {
         "FormularSystemHooks": "includes/FormularSystemHooks.php"
+    },
+    "ResourceFileModulePaths": {
+        "localBasePath": "resources",
+        "remoteExtPath": "mwFormularSystem/resources"
+    },
+    "ResourceModules": {
+        "ext.mwFormularSystem": {
+            "scripts": [
+                "formularSystem.js"
+            ],
+            "dependencies": [
+                "jquery"
+            ],
+            "targets": [
+                "desktop",
+                "mobile"
+            ]
+        }
     },
     "Config": {
         "wgFormularSystemURL": {
@@ -28,4 +46,3 @@
         }
     }
 }
-
